@@ -26,7 +26,7 @@
         <apacheAuthZserver.version>1.0.3</apacheAuthZserver.version>
         <apacheAuthZserver.common.version>1.0.2</apacheAuthZserver.common.version>
         <spring-core.version>5.2.20.RELEASE</spring-core.version>
-        <jackson.version>2.13.1</jackson.version>
+        <jackson.version>2.13.2.1</jackson.version>
         <nimbus-jwt>9.21</nimbus-jwt>
         <lombok.version>1.18.22</lombok.version>
         <okhttp-version>2.7.5</okhttp-version>
