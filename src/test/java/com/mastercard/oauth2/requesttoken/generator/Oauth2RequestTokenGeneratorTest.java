@@ -28,8 +28,8 @@ public class Oauth2RequestTokenGeneratorTest {
         keyStorePassword = "<Enter your keyStorePassword>";
         //ex. keyStorePassword = "keyStorePassword";
 
-        //Add your P12 file in src/main/resources folder
-        p12File = "<Enter your p12 file name>";
+        //Save your P12 file in some folder and give its path with filename
+        p12File = "<Enter your p12 file along with path>";
         // ex. p12File = "keyalias-xb-services.p12";
     }
     @Test

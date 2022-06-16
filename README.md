@@ -8,7 +8,7 @@ This application illustrates the generation of request token required to connect
 - Create an account at [Mastercard Developers](https://developer.mastercard.com/account/sign-up).
 - Create a new project and add `Mastercard Cross-Border Services` API to your project. This project will generate the project keys required to be used with APIs in each of the environment.
 - Download signing key, it will be inside the zip file. Also copy consumerKey, keyAlias and KeyStorePassword. This you will need to generate request token. 
-- Select .p12 file from zip and copy it to `src\main\resources` in the project folder.
+- Select .p12 file from zip, copy it to some folder and give its path with filename.
 
 ### Build and Run   
 
