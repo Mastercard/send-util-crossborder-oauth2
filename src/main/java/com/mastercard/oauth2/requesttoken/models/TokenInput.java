@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 @Data
- @Builder
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
@@ -22,4 +22,8 @@ public class TokenInput {
      @Builder.Default
      private JWSAlgorithm tokenSigningAlgorithm = JWSAlgorithm.RS256;
 
+     private String consumerKey;
+
+     @Builder.Default
+     private boolean populateX5cTokenHeader = Boolean.FALSE;
 }

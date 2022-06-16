@@ -1,14 +1,14 @@
 ## OAUTH2.0 Implementation for Token Generation
 
-This is a OAUTH2.0 Client Utility application that is used to generate the request tokens. Please see here for more details : [Mastercard Developers](https://developer.mastercard.com/cross-border-services/documentation/getting-started-oauth2/). 
-This utility application illustrates generating the request tokens require to connect with the cross-border APIs.
+This is a OAUTH2.0 Client Utility application to generate the request token. Please see here for more details : [Mastercard Developers](https://developer.mastercard.com/cross-border-services/documentation/getting-started-oauth2/). 
+This application illustrates the generation of request token required to connect with the cross-border APIs with oauth2 authentication method.
 
 ### Setup 
  
 - Create an account at [Mastercard Developers](https://developer.mastercard.com/account/sign-up).
-- Create a new project and add `Mastercard Cross-Border Services` API to your project. The project will generate the project keys required to use the APIs in each of the environments.
-- Configure project and download signing key. It will download the zip file.
-- To generate the request token we need oauthKeyFile, keyAlias, oauthKeyPassword, consumerKey which we can get from .p12 file.
+- Create a new project and add `Mastercard Cross-Border Services` API to your project. This project will generate the project keys required to be used with APIs in each of the environment.
+- Download signing key, it will be inside the zip file. Also copy consumerKey, keyAlias and KeyStorePassword. This you will need to generate request token. 
+- Select .p12 file from zip and copy it to `src\main\resources` in the project folder.
 
 ### Build and Run   
 
@@ -16,20 +16,24 @@ This utility application illustrates generating the request tokens require to co
 - Select MasterCard Cross-border Services - Oauth2Token - API
 - Select Life cycle 
 - Run clean and install
-- To generate request token use Oauth2RequestTokenGenerator class.
-- The consumer key and the private certificate used for token generation(as shown below) is obtained as part of the setup described above.
+
+### Decoding Request token
 
 |      Token Attributes     |                   Significance                    |                    Possible Values                       |
 | --------------------------| --------------------------------------------------|----------------------------------------------------------|
 |          x5t#S256         |                  Certificate thumbprint           |                   Signature public key
-|            x5c            |                      Public cert                  |                  X.509 certificate chain 
 |           kid             |                  Consumer key of cert             |             Consumer Key which we will get from DevZone
 |           cty             |                     Content Type                  |                            JWS
 |           typ             |                   JOSE object type                |                            JWT
 |           alg             |                    JWS Algorithm                  |                       RS256 / ES256
 |           nbf             |                  Not before Date                  |                       auto populated
-|           grp             |                 Service group id                  |    [“PSP_PI_RO”]: This to be used for all payment related APIs
-|           iss             |               Secure access issuer name           |                             SPM
 |           exp             |                   Expiry date                     |                       auto populated
 |           iat             |                 Issued At date                    |                      auto populated
 |           jti             |                  Unique JWT id                    |                      JWT Generated id
+
+### Executing the use cases
+**Executing the use-cases in IDE**
+
+- Go to [project folder](\src\test\java\com\mastercard\oauth2\requesttoken\generator), Open Oauth2RequestTokenGeneratorTest.java
+- To execute use case, pass the required input parameters.
+- Right click on testGenerateToken() method in the class and run. You will get the request token. 
