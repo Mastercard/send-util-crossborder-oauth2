@@ -6,8 +6,8 @@ This application illustrates the generation of request token required to connect
 ### Setup 
  
 - Create an account at [Mastercard Developers](https://developer.mastercard.com/account/sign-up).
-- Create a new project and add `Mastercard Cross-Border Services` API to your project. This project will generate the project keys required to be used with APIs in each of the environment.
-- Download signing key, it will be inside the zip file. Also copy consumerKey, keyAlias and KeyStorePassword. This you will need to generate request token. 
+- Create a new project and add `Mastercard Cross-Border Services` API to your project. This project will provide access to APIs in sandbox the environment first.
+- Download signing key(a zip file will get downloaded). These properties and file will be required in utility to generate request token. 
 - Select .p12 file from zip, copy it to some folder and give its path with filename.
 
 ### Build and Run   
@@ -32,8 +32,8 @@ This application illustrates the generation of request token required to connect
 |           jti             |                  Unique JWT id                    |                      JWT Generated id
 
 ### Executing the use cases
-**Executing the use-cases in IDE**
+**Generate a sample token**
 
 - Go to [project folder](\src\test\java\com\mastercard\oauth2\requesttoken\generator), Open Oauth2RequestTokenGeneratorTest.java
-- To execute use case, pass the required input parameters.
+- To generate sample token, pass required input parameters.
 - Right click on testGenerateToken() method in the class and run. You will get the request token. 
