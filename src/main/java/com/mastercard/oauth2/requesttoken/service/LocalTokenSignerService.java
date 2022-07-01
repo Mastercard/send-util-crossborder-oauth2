@@ -42,13 +42,13 @@ public class LocalTokenSignerService {
                 signer = new ECDSASigner(privateKey, Curve.P_256);
             }
 
-            log.info("using signer " + signer);
+            log.info("using signer {}", signer);
 
             jwsObject.sign(signer);
             return jwsObject.serialize();
 
         } catch (JOSEException e) {
-            log.error("Error occurred during self signing of Token: " + e.getMessage());
+            log.error("Error occurred during self signing of Token: {}", e.getMessage());
             throw new TokenGenerationException("Error occurred during token signing");
         }
     }
