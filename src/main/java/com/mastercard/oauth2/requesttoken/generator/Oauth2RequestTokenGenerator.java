@@ -17,6 +17,8 @@ import com.nimbusds.jose.util.Base64URL;
 import com.nimbusds.jwt.JWTClaimsSet;
 import org.apache.oltu.oauth2.as.issuer.MD5Generator;
 import org.apache.oltu.oauth2.common.exception.OAuthSystemException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.ObjectUtils;
 import org.springframework.util.StringUtils;
@@ -25,6 +27,8 @@ import java.util.Date;
 import java.util.List;
 
 public class Oauth2RequestTokenGenerator {
+
+    private static final Logger log = LoggerFactory.getLogger(Oauth2RequestTokenGenerator.class);
 
     public static final String PKCS_12 = "PKCS12";
 
@@ -83,7 +87,7 @@ public class Oauth2RequestTokenGenerator {
             clientAssertionToken = localTokenSignerService.sign(jwsObject);
 
         } catch (OAuthSystemException e) {
-            e.printStackTrace();
+            log.warn("Unable to generate JWT ID for request token", e);
         }
         return clientAssertionToken;
     }

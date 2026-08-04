@@ -20,14 +20,8 @@ public class Oauth2RequestTokenGeneratorTest {
     @Before
     public void init(){
         consumerKey = "<Enter your complete consumer Key>";
-        //ex.consumerKey = "aWvYEcc91223344b4MtanKFGgugCizL7-clmJiKSE60d968e0!977b121bce1c4e14833e6939abdb766f0000000000000000";
-
         keyAlias = "<Enter your keyalias>";
-        //ex. keyAlias = "keyalias";
-
         keyStorePassword = "<Enter your keyStorePassword>";
-        //ex. keyStorePassword = "keyStorePassword";
-
         //Save your P12 file in some folder and give its path with filename
         p12File = "<Enter your p12 file along with path>";
         // ex. p12File = "keyalias-xb-services.p12";
@@ -42,7 +36,7 @@ public class Oauth2RequestTokenGeneratorTest {
             keyStorePassword);
 
         String token = oauth2RequestTokenGenerator.generateToken(tokenInput);
-        log.info("Request / client assertion token : " + token);
+        log.info("Request / client assertion token : {}", token);
         Assert.assertNotEquals( EMPTY_STR, token);
     }
 }
