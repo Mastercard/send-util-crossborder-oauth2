@@ -6,7 +6,14 @@ public enum JWTSupportedAlgorithm {
     RS256("RS256", "SHA-256", "rsa-sha256", "SHA256withRSA"),
     ES256("ES256", "SHA-256", "ecdsa-sha256", "SHA256withECDSA"),
     RS1("RS1", "RSA-SHA1", "rsa-sha1", "SHA1withRSA"),
-    NOT_SUPPORTED("NOT SUPPORTED", "NOT SUPPORTED", "NOT SUPPORTED", "NOT SUPPORTED");
+    NOT_SUPPORTED(Constants.NOT_SUPPORTED_VALUE, Constants.NOT_SUPPORTED_VALUE, Constants.NOT_SUPPORTED_VALUE, Constants.NOT_SUPPORTED_VALUE);
+
+    private static final class Constants {
+        private static final String NOT_SUPPORTED_VALUE = "NOT SUPPORTED";
+
+        private Constants() {
+        }
+    }
 
     private final String algorithmName;
     private final String hmacAlgorithmName;

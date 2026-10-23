@@ -182,7 +182,7 @@ public class LocalCertificateProvider {
         try {
             return Collections.singletonList(Base64.encode(certificate.getEncoded()));
         } catch (CertificateEncodingException var3) {
-            log.warn("error while converting client certificate {}", var3);
+            log.warn("error while converting client certificate", var3);
         }
         return Collections.emptyList();
     }

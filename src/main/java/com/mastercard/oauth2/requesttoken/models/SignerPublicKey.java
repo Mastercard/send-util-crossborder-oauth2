@@ -17,15 +17,23 @@ public class SignerPublicKey {
     private JWK publicKey;
     private boolean active;
 
+     @Override
     public boolean equals(Object o) {
         if (this == o) {
             return true;
-        } else if ( o instanceof SignerPublicKey) {
-            SignerPublicKey that = (SignerPublicKey)o;
-            return (null != this.publicKey && null != that.getPublicKey()) && (this.publicKey.getKeyID().equals(that.getPublicKey().getKeyID()));
-        } else {
+          } else if (o instanceof SignerPublicKey) {
+              SignerPublicKey that = (SignerPublicKey) o;
+              return (null != this.publicKey && null != that.getPublicKey())
+                      && (this.publicKey.getKeyID().equals(that.getPublicKey().getKeyID()));
+          } else {
             return false;
         }
+    }
+
+    @Override
+    public int hashCode() {
+        String keyId = this.publicKey != null ? this.publicKey.getKeyID() : null;
+        return keyId != null ? keyId.hashCode() : 0;
     }
 
     @Generated
